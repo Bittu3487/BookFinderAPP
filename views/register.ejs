@@ -1,0 +1,58 @@
+<%- include('partials/header') %>
+
+<div class="container mt-5">
+  <div class="row justify-content-center align-items-center" style="min-height: 100vh;">
+    <div class="col-md-10 col-lg-8 col-xl-6">
+      <div class="card">
+        <div class="card-body">
+
+          <!-- Makes POST request to /register route -->
+          <form action="/register" method="POST">
+            <div class="form-group mb-3">
+              <div class="d-flex justify-content-between align-items-center">
+                <label for="email" class="mb-0">Email</label>
+                <a href="/">
+                <button  class="btn btn-primary rounded-circle p-2 lh-1" type="button">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                  
+                </button>
+                </a>
+              </div>
+              <input type="email" class="form-control mt-2" name="username" required>
+            </div>
+            <div class="form-group mb-3">
+              <label for="password">Password</label>
+              <input type="password" class="form-control" name="password" required>
+            </div>
+            <button type="submit" class="btn btn-dark w-100">Register</button>
+          </form>
+
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <footer class="d-flex flex-wrap justify-content-center align-items-center py-5 mt-5">
+          <div class="col-md-4 d-flex justify-content-center align-items-center">
+              <span class="mb-3 mb-md-0 text-body-secondary">© 2024 Book Finder , All rights reserved</span>
+          </div>
+      </footer>
+    </div>
+    <!-- Uncomment if needed for Google Sign Up -->
+    <!-- 
+    <div class="col-sm-4">
+      <div class="card social-block">
+        <div class="card-body">
+          <a class="btn btn-block" href="/auth/google" role="button">
+            <i class="fab fa-google"></i>
+            Sign Up with Google
+          </a>
+        </div>
+      </div>
+    </div>
+    -->
+  </div>
+</div>
+
+<%- include('partials/footer') %>
