@@ -11,6 +11,7 @@ const app = express();
 const port = 3000;
 const saltRounds = 10;
 env.config();
+const API_URL = process.env.API_URL;
 app.use(session({
   secret:process.env.SECRET,
   resave:false,
@@ -138,7 +139,7 @@ passport.use(
 app.post("/submit", async(req, res) => {
   var bookName = req.body["fName"];
   try {
-    var response = await axios.get(`https://openlibrary.org/search.json?q=${bookName}`);
+    var response = await axios.get(`${API_URL}?q=${bookName}`);
     var result = response.data;
     res.render("index.ejs" , {data:result});
   } catch (error) {
